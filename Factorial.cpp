@@ -1,25 +1,33 @@
 #include <iostream>
-unsigned long long factorial(int n) {
-    if (n == 0 || n == 1)
-        return 1;
-    else
-        return n * factorial(n - 1);
+void fibonacci(int n) {
+    int first = 0, second = 1, next;
+
+    cout << "Fibonacci Sequence up to " << n << " terms:" << endl;
+
+    for (int i = 0; i < n; ++i) {
+        if (i <= 1)
+            next = i;
+        else {
+            next = first + second;
+            first = second;
+            second = next;
+        }
+        cout << next << " ";
+    }
+    cout << endl;
 }
 
 int main() {
-    int num;
-    cout << "Enter a non-negative integer: ";
-    cin >> num;
+    int num_terms;
+    cout << "Enter the number of terms for Fibonacci sequence: ";
+    cin >> num_terms;
 
-    if (num < 0) {
-        cout << "Error: Factorial is undefined for negative numbers." << endl;
+    if (num_terms <= 0) {
+        cout << "Error: Number of terms must be positive." << endl;
         return 1;
     }
 
-    unsigned long long result = factorial(num);
-    cout << "Factorial of " << num << " is: " << result << endl;
+    fibonacci(num_terms);
 
     return 0;
 }
-//this is factorial.cpp from main branch
-// this is Factoril.cpp file from feature-branch
