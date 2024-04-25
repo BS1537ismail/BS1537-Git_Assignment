@@ -22,8 +22,5 @@ int main() {
     return 0;
 }
 
-// this is Factoril.cpp file from feature-branch
-//this is factorial.cpp from main branch
+//resolve cherry-pick
 
-//this is factorial.cpp from main branch
-// this is Factoril.cpp file from feature-branch
